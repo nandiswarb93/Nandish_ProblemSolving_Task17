@@ -1,0 +1,52 @@
+rows = +prompt("enter no of rows : ")
+np = (rows*(rows+1))/2
+prime=2,arr=[]
+function isprime(n)
+{
+    for( i = 2 ;i <= Math.floor(n/2);i++)
+    {
+        if(n%i == 0)
+        {
+            return false
+        }
+    }
+    return true
+}
+
+while(arr.length != np)
+{
+    if(isprime(prime))
+    {
+        arr.push(prime)
+    }
+    prime++
+}
+for(i = 0 ; i < rows ; i++)
+{
+    s = "",sum = 0
+    for(j = 1; j<=i+1;j++)
+    {
+        if(j==1)
+        {
+            s = s + arr[i] + " "
+            sum = sum + i
+        }
+        else
+        {
+            sum = sum + rows-j+1
+            s = s + arr[sum]+" "
+        }
+    }
+    console.log(s)
+}
+
+
+o/p:
+
+
+enter no of rows : 5
+2 
+3 13 
+5 17 29 
+7 19 31 41 
+11 23 37 43 47
